@@ -1,26 +1,104 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer theme {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --color-burgundy: #792D3B;
+    --color-wine: #542D32;
+    --color-gold: #B08A4A;
+    --color-gold-light: #D4AF37;
+    --color-gold-muted: #9E7A3E;
+    --color-ivory: #F5EEE5;
+    --color-ivory-light: #FAF6F0;
+    --color-espresso: #332522;
+    --color-white: #FFFFFF;
   }
 }
 
+:root {
+  --background: #F5EEE5;
+  --foreground: #332522;
+}
+
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), sans-serif;
+  overflow-x: hidden;
+  selection-background-color: #792D3B;
+  selection-color: #F5EEE5;
+}
+
+::selection {
+  background-color: #792D3B;
+  color: #F5EEE5;
+}
+
+/* Luxury scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F5EEE5;
+}
+::-webkit-scrollbar-thumb {
+  background: #B08A4A;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #792D3B;
+}
+
+/* Custom Utilities */
+.font-serif {
+  font-family: var(--font-cormorant), Georgia, serif;
+}
+
+.font-sans {
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.text-gold-gradient {
+  background: linear-gradient(135deg, #B08A4A 0%, #E6CA85 50%, #B08A4A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.border-gold-subtle {
+  border-color: rgba(176, 138, 74, 0.25);
+}
+
+.bg-burgundy-rich {
+  background-color: #792D3B;
+}
+
+.bg-wine-deep {
+  background-color: #542D32;
+}
+
+.bg-ivory-subtle {
+  background-color: #F5EEE5;
+}
+
+.bg-ivory-light {
+  background-color: #FAF6F0;
+}
+
+.text-burgundy {
+  color: #792D3B;
+}
+
+.text-wine {
+  color: #542D32;
+}
+
+.text-gold {
+  color: #B08A4A;
+}
+
+.text-espresso {
+  color: #332522;
+}
+
+.border-gold {
+  border-color: #B08A4A;
 }
